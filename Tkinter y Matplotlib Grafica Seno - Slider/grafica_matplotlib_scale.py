@@ -1,6 +1,6 @@
 # @autor: Magno Efren
 # Youtube: https://www.youtube.com/c/MagnoEfren/
-#Tkinter y Matplotlib
+# Tkinter y Matplotlib
 
 from tkinter import Tk, Frame,Button,Label, ttk
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
