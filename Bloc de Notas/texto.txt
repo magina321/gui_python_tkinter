@@ -1,0 +1,4 @@
+@
+SUSCRIBETE:
+Bloc de notas   con Python usando  Tkinter
+https://www.youtube.com/watch?v=LPpoReqIqKQ&t=18s
