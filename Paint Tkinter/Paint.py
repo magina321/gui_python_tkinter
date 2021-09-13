@@ -16,33 +16,26 @@ def linea_xy(event):
 	linea_x = event.x 
 	linea_y = event.y 
 
-
 def linea(event):
 	global linea_x, linea_y
 	canvas.create_line((linea_x, linea_y, event.x, event.y), fill= color, width = espesor_pincel.get())
 	linea_x = event.x
 	linea_y = event.y
 
-
 def mostrar_color(nueva_color):
 	global color 
 	color = nueva_color
-
 
 def borrar():
 	global color
 	color = 'White'
 
-
 def limpiar():
 	canvas.delete(ALL)
-
 
 def salir():
 	ventana.destroy()
 	ventana.quit()
-
-
 
 def guardar_dibujo():
 
@@ -60,8 +53,6 @@ def guardar_dibujo():
 	except:
 		messagebox.showerror('Guardar Dibujo', 'Imagen no guardada\n Error')
 
-
-
 ventana = Tk()
 ventana.state('zoomed')
 ventana.config(bg='black')
@@ -72,17 +63,13 @@ ventana.rowconfigure(0, weight=1)
 ventana.columnconfigure(0, weight=1)
 
 # frame principal comandos  y canvas de dibujo
-
 frame = Frame(ventana, bg='black', height=200)
 frame.grid(column =0, row =0, sticky='ew')
-
 frame.columnconfigure(0, minsize=200, weight=1)
-
 
 # canvas de dibujo 
 canvas = Canvas(ventana,  height=660 , bg= 'white' )
 canvas.grid(row=1,column=0, sticky='nsew')
-
 
 canvas.rowconfigure(0,weight=1)
 canvas.columnconfigure(0, weight=1, minsize=100)
@@ -90,12 +77,9 @@ canvas.columnconfigure(0, weight=1, minsize=100)
 canvas.bind('<Button-1>', linea_xy)
 canvas.bind('<B1-Motion>', linea)
 
-
 # Canvas para colores 
-
 canvas_colores = Canvas(frame, bg='black', width=5,  height=40)
 canvas_colores.grid(column =0, row =0, sticky='ew', padx=1, pady=1)
-
 
 id = canvas_colores.create_rectangle((10,10,30,30),fill ='red')
 canvas_colores.tag_bind(id, '<Button-1>', lambda x: mostrar_color('red'))
@@ -149,18 +133,15 @@ id = canvas_colores.create_rectangle((490,10,510,30),fill ='black')
 canvas_colores.tag_bind(id, '<Button-1>', lambda x: mostrar_color('black'))
 
 # botones y scale de control
-
 espesor_pincel = Scale(frame,  orient= HORIZONTAL, from_ = 0, to=50, length=200 ,relief=  'groove', bg='gold', width=17, sliderlength=20, highlightbackground='white',activebackground='red')
 espesor_pincel.set(1)
 espesor_pincel.grid(column=1, row=0, sticky='ew', pady=1, padx=2)
-
 
 bt_guardar = Button(frame, text ='Guardar', bg='green2', command = guardar_dibujo, width=10, height=2,activebackground='white', font=('Comic sens MS',10,'bold'))
 bt_guardar.grid(column=2, row=0, sticky='ew',pady=1,padx=4)
 
 bt_borrar = Button(frame, text ='Borrar', bg='cyan2', command = borrar, width=10, height=2,activebackground='white',font=('Comic sens MS',10,'bold'))
 bt_borrar.grid(column=3, row=0, sticky='ew', pady=1, padx=4)
-
 
 bt_limpiar = Button(frame, text ='Limpiar', bg='violet red', command = limpiar, width=10, height=2,activebackground='white',font=('Comic sens MS',10,'bold'))
 bt_limpiar.grid(column=4, row=0, sticky='ew', pady=1, padx=4)
