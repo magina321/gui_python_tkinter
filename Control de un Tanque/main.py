@@ -26,7 +26,6 @@ tanque.create_rectangle(100,55,50,165, fill="white")
 tanque.create_rectangle(100,165,50,165, fill="blue")       
 tanque.create_oval(10,0,140,50, fill= "#CAC6BE")
 
-
 nombre1= Label(raiz, text="25000 L",bg="black",fg="white", font="Helvetica 12 bold" )    
 nombre1.pack()
 nombre1.place(x=190,y=65)    
@@ -34,8 +33,6 @@ nombre1.place(x=190,y=65)
 nombre2= Label(raiz, text="0 L",bg="black",fg="white", font="Helvetica 12 bold" )    
 nombre2.pack()
 nombre2.place(x=190,y= 210)
-
-
 
 def llenado(): 
     num=165     
@@ -57,23 +54,16 @@ def llenado():
         indicadorN.pack()
         indicadorN.place(x=300, y= 70)
 
-
-
-
 def salir():
     raiz.destroy()
     raiz.quit()
-
 
 boton = Button(raiz, bg ="magenta", text ="LLENAR ",font="Helvetica 10 bold", command =llenado, width = 15)
 boton.pack()
 boton.place(x=300,y=120)  
 
-
-
 boton3 = Button(raiz, bg ="red", text ="  SALIR ",font="Helvetica 10 bold", command =salir,width =15)
 boton3.pack()
 boton3.place(x=300,y=220)    
-
 
 raiz.mainloop()
